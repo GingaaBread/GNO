@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://bevry-archive.github.io/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
+    <script type="text/javascript">$.SyntaxHighlighter.init();</script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>🖥️ GNO: Documentation</title>
+</head>
+<body>
+    <header class="d-flex align-items-center">
+        <svg></svg>
+        <div id="socials">Header</div>
+    </header>
+    <section class="d-flex justify-content-center">
+        <nav>
+            <ol>
+                <li class="current"><a href="#"><h5>Start Here</h5></a></li>
+                <li>
+                    <a href="#"><h5>Essentials</h5></a>
+                    <ol>
+                        <li><a href="#">Datatypes</a></li>
+                        <li><a href="#">Operators</a></li>
+                        <li><a href="#">Conditions</a></li>
+                        <li><a href="#">Loops</a></li>
+                        <li><a href="#">Arrays</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#"><h5>Object Orientation</h5></a>
+                    <ol>
+                        <li><a href="#">Classes & Objects</a></li>
+                        <li><a href="#">Properties</a></li>
+                        <li><a href="#">Constructors</a></li>
+                        <li><a href="#">Methods</a></li>
+                        <li><a href="#">Protection Levels</a></li>
+                        <li><a href="#">Inheritance</a></li>
+                        <li><a href="#">Interfaces</a></li>
+                        <li><a href="#">Abstract Classes</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </nav>
+        <main>
+            <h1>Start Here</h1>
+            <p>GNO is an object-oriented programming language designed to be comfortable. It's three main focuses are:</p>
+            <ul>
+                <li>Simplicity</li>
+                <li>Readability</li>
+                <li>Functionality</li>
+            </ul>
+            <p>Despite its object-oriented approach, GNO was created with functional programming in mind.</p>
+
+            <a href="#hello"><h2 id="hello">Hello World!</h2></a>
+            <p>Create a blank .gno file on your computer like <code class="inline">GNOTest.gno</code></p>
+            <p>Using a text editor, add the following code to your file:</p>
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        print("Hello World! 💙")
+                    }
+                </code>
+            </pre>
+            <p>If the console displays <code class="inline">Hello World! 💙</code>, you are all set!</p>
+
+            <a href="#optionals"><h2 id="optionals">Optionals</h2></a>
+            <p>
+                Similar to other languages, semicolons are completely optional in GNO. 
+                This way you are not forced to use semicolons, but still can if you want to.
+            </p>
+            <p>
+                You also don't have to explicitly specify variable types if you don't want to. 
+                If you omit them, GNO will determine them automatically!
+            </p>
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        food = "Water Melon 🍉"
+                        string drink = "Water 🌊"
+
+                        print("My favourite food is " + food); // Output: "My favourite food is Water Melon 🍉"
+                        print("My favourite drink is " + drink) // Output: "My favourite drink is Water 🌊"
+                    }
+                </code>
+            </pre>
+
+            <a href="#alternatives"><h2 id="alternatives">Text Alternatives</h2></a>
+            <p>
+                GNO offers a multitude of text alternatives to operators, such as <code class="inline">and</code> 
+                instead of <code class="inline">&&</code> or <code class="inline">is</code> instead of 
+                <code class="inline">==</code>. But of course you can still use the traditional operators 
+                if you prefer them over the text alternatives!
+            </p>
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        i = 0
+                        j = 25
+                        print(i is 0) // true
+                        print(j is 25) // false
+
+                        print(i == 0) // true
+                        print(j == 25) // false
+                    }
+                </code>
+            </pre>
+
+            <a href="#orientation"><h2 id="orientation">Comfortable Object Orientation</h2></a>
+            <p>
+                GNO is designed to be an object-oriented programming language without the typical 'writing mania'. 
+                It emphasises simplicity and attempts to minimise the amount of <em>'thoughtless'</em> object-oriented code
+                like constructors, getter & setter methods, etc.
+            </p>
+            <pre>
+                <code class="highlight">
+                    class Car : Vehicle, IBuyable {
+                        :properties {
+                            string colour
+                            double width
+                            int:get maxVelocity
+                        }
+
+                        overriden Drive() {
+                            print("Out of the way, yall! 🚗")
+                        }
+
+                        -Honk() {
+                            print("Meep meep!")
+                        }
+
+                        boolean Buy() {
+                            Print("Successfully bought the car!")
+                            return true
+                        }
+                    }
+                </code>
+            </pre>
+            <pre>
+                <code class="highlight">
+                    main class Example {
+                        car = new Car("Red", 2.45, 210)
+
+                        car.Drive() // Output: "Out of the way, yall! 🚗"
+                        car.colour = "Blue"
+                        print(car.colour) // Output: "Blue"
+                    }
+                </code>
+            </pre>
+            <a href="#functionality"><h2 id="functionality">Functionality</h2></a>
+            <p>Friends of the functional programming approach will also cherish GNO's focus on comfort and simplicity.</p>
+            <pre>
+                <code class="highlight language-java">
+                    main class GNOTest {
+                        studentAges = [16,19,20,26,36]
+                        
+                        // Task: Print all grown-up students (age 18+)
+                        studentAges.over.filtered(#>17).all(print) // Output: 19,20,26,36
+
+                        // Task: Get the sum of the age of all students in one year 
+                        int sum = studentAges.over.mapped(#+1).reduce(sum) // Output: 122
+
+                        // Task: Print all ages except the two youngest
+                        studentAges.over.sorted().skip(2).all(print) 
+                    }
+                </code>
+            </pre>
+        </main>
+        <aside>
+            <h1>On This Page</h1>
+            <ol>
+                <li><a href="#hello">Hello World!</a></li>
+                <li><a href="#optionals">Optionals</a></li>
+                <li><a href="#alternatives">Text Alternatives</a></li>
+                <li><a href="#orientation">Comfortable Object Orientation</a></li>
+                <li><a href="#functionality">Functionality</a></li>
+            </ol>
+        </aside>
+    </section>
+    <script>
+        
+    </script>
+</body> 
+</html>
