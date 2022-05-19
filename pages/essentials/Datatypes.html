@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://bevry-archive.github.io/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
+    <script type="text/javascript">$.SyntaxHighlighter.init();</script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../style.css">
+    <title>🖥️ GNO: Documentation</title>
+</head>
+<body>
+    <header class="d-flex align-items-center">
+        <svg></svg>
+        <div id="socials">Header</div>
+    </header>
+    <section class="d-flex justify-content-center">
+        <nav>
+            <ol>
+                <li><a href="../index.html"><h5>Start Here</h5></a></li>
+                <li>
+                    <a href="#"><h5>Essentials</h5></a>
+                    <ol>
+                        <li class="current"><a href="#">Datatypes</a></li>
+                        <li><a href="#">Operators</a></li>
+                        <li><a href="#">Conditions</a></li>
+                        <li><a href="#">Loops</a></li>
+                        <li><a href="#">Arrays</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#"><h5>Object Orientation</h5></a>
+                    <ol>
+                        <li><a href="#">Classes & Objects</a></li>
+                        <li><a href="#">Properties</a></li>
+                        <li><a href="#">Constructors</a></li>
+                        <li><a href="#">Methods</a></li>
+                        <li><a href="#">Protection Levels</a></li>
+                        <li><a href="#">Inheritance</a></li>
+                        <li><a href="#">Interfaces</a></li>
+                        <li><a href="#">Abstract Classes</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </nav>
+        <main>
+            <h1>Datatypes</h1>
+            <p>
+                Variables are one of the, <em>if not the</em>, most fundamental parts of programming. Generally speaking, a variable is just 
+                some kind data. For example, a variable might be <code class="inline">age</code>, 
+                <code class="inline">height</code>,<code class="inline">colour</code>, etc...
+            </p>
+            <p>
+                The value is assigned by using the equality sign <code class="inline">=</code> character and then the value. 
+                For example, <code class="inline">age = 25</code>, <code class="inline">height = 12.5</code>, <code class="inline">colour = "Red"</code>
+            </p>
+            <div class="alert alert-warning" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+                Remember: The value comes <strong>after</strong> the equality sign!
+            </div>
+            <p>GNO uses the following datatypes:</p>
+            <ul>
+                <li><strong>int:</strong> 32 bit signed integers</li>
+                <li><strong>long:</strong> 64 bit signed integers</li>
+                <li><strong>single:</strong> single precision floating point</li>
+                <li><strong>double:</strong> double precision floating point</li>
+                <li><strong>char:</strong> utf-8 characters</li>
+                <li><strong>string:</strong> text</li>
+                <li><strong>boolean:</strong> true or false</li>
+            </ul>
+
+            <p>
+                It is optional to explicitly declare the datatype when directly assigning a value,
+                however, you have to declare the datatype when you declare a variable, but don't assign a value:
+            </p>
+
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        // GNO automatically determines number to be an int, and greeting to be a string
+                        
+                        number = 25
+                        number = 13
+                        number = "Is this allowed?" // ERROR -> number was initialised as an int 
+                        
+                        greeting = "Hello"
+                        greeting = "Hi"
+                        greeting = false // ERROR -> greeting was initialised as a string 
+
+                        // You can explicitly declare the datatype
+                        int age = 99 
+                        age = 25
+                        age = 5.5 // ERROR -> age was initialised as an int 
+
+                        string colour = "Blue 🔵"
+
+                        // You can also "just" declare a variable and later assign a value
+                        boolean happy
+                        hapy = true
+                        happy = false
+                        
+                        // However, then you HAVE to declare a datatype!
+                        letter // ERROR
+                        letter = 'C'
+                    }
+                </code>
+            </pre>
+
+            <p>In the following, you can find an overview of each datatype.</p>
+
+            <a href="#int"><h2 id="int">int</h2></a>
+            <p>int is a 32 bit signed two's complement integer</p>
+            <p>The value ranges from -2<sup>31</sup> (minimum) to 2<sup>31</sup>-1 (maximum).</p>
+            <p><em>Default Value: </em>0</p>
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        int i
+                        i = 5
+                        i = 2**31-1 // ** = power, thus i=2^31-1 i = 2147483647, MAX int value
+                        i = -2**31 // ** = power, thus i=-2^31 i = -2147483648, MIN int value
+                    }
+                </code>
+            </pre>
+
+            <a href="#long"><h2 id="long">long</h2></a>
+            <p>There may be cases where 32 bit ints don't suffice: a long is a 64 bit signed two's complement integer</p>
+            <p>The value ranges from -2<sup>63</sup> (minimum) to 2<sup>63</sup>-1 (maximum).</p>
+            <p><em>Default Value: </em>0l</p>
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        long i
+                        i = 5
+                        i = 2**63-1 // ** = power, thus i=2^63-1, MAX long value
+                        i = -2**63 // ** = power, thus i=-2^63 i, MIN long value
+                    }
+                </code>
+            </pre>
+            <div class="alert alert-primary d-flex align-items-center" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                </svg>
+                <div>
+                    You can add an optional <strong>L</strong> (lowercase or uppercase) after your long value
+                    to signalise that you are using a long value:
+                    long example = 65261L
+                </div>
+            </div>
+
+            <a href="#single"><h2 id="single">single</h2></a>
+            <p>A single is a 32 bit signed IEEE 754 floating point</p>
+            <p><em>Default Value: </em>0s</p>
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        single i
+                        i = 7.5
+                        i = .5 // For 0.X we can leave out the 0
+                        i = -285.52
+                    }
+                </code>
+            </pre>
+            <div class="alert alert-primary d-flex align-items-center" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                </svg>
+                <div>
+                    You can add an optional <strong>S</strong> (lowercase or uppercase) after your long value
+                    to signalise that you are using a long value:
+                    single example = 65.25s
+                </div>
+            </div>
+
+            <a href="#double"><h2 id="double">double</h2></a>
+            <p>A double is a 64 bit signed IEEE 754 floating point</p>
+            <p><em>Default Value: </em>0d</p>
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        double i
+                        i = 89247.5
+                        i = .5 // For 0.X we can leave out the 0
+                        i = -89.5278765
+                    }
+                </code>
+            </pre>
+            <div class="alert alert-primary d-flex align-items-center" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                </svg>
+                <div>
+                    You can add an optional <strong>D</strong> (lowercase or uppercase) after your long value
+                    to signalise that you are using a long value:
+                    single example = 65.25d
+                </div>
+            </div>
+
+            <a href="#char"><h2 id="char">char</h2></a>
+            <p>A char is a single utf-8 character enclosed by single quotes (')</p>
+            <p><em>Default Value: </em>''</p>
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        char c
+                        c = 'X'
+                        c = '2'
+                        c = '%'
+                        c = '🛩️'
+                    }
+                </code>
+            </pre>
+            <div class="alert alert-danger" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                </svg>
+                <div>
+                    Some characters need to be escaped! For example, you CANNOT do: char example = ''' because the single quote is needed
+                    for the char. Escape Characters:
+                    <ul>
+                        <li><strong>\t</strong>: A tab</li>
+                        <li><strong>\b</strong>: A backspace</li>
+                        <li><strong>\n</strong>: A newline</li>
+                        <li><strong>\r</strong>: A carriage return</li>
+                        <li><strong>\f</strong>: A form feed</li>
+                        <li><strong>\'</strong>: A single quote</li>
+                        <li><strong>\"</strong>: A double quote</li>
+                        <li><strong>\\</strong>: A backslash</li>
+                    </ul>
+                </div>
+            </div>              
+
+            <a href="#string"><h2 id="string">string</h2></a>
+            <p>A string is a sequence of utf-8 characters enclosed by double quotes (")</p>
+            <p><em>Default Value: </em>""</p>
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        string t
+                        t = "Hello"
+                        t = "World"
+                        t = "123456789$%&()🧙‍♂️"
+                    }
+                </code>
+            </pre>
+
+            <a href="#boolean"><h2 id="boolean">boolean</h2></a>
+            <p>A boolean is either true or false</p>
+            <p><em>Default Value: </em>false</p>
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        boolean b
+                        b = true
+                        b = false
+                        b = 5 is 2+3 // true
+                        b = 2 is 1+1 and 2 is 0+0 // false
+
+                        /* 
+                            We can use any boolean expression that results in a clear true or false 
+                            Either 5 is the same as 2+3 or not
+                            We will take a look at operators next
+                        */
+                    }
+                </code>
+            </pre>
+        </main>
+        <aside>
+            <h1>On This Page</h1>
+            <ol>
+                <li><a href="#int">int</a></li>
+                <li><a href="#long">long</a></li>
+                <li><a href="#single">single</a></li>
+                <li><a href="#double">double</a></li>
+                <li><a href="#char">char</a></li>
+                <li><a href="#string">string</a></li>
+                <li><a href="#boolean">boolean</a></li>
+            </ol>
+        </aside>
+    </section>
+</body> 
+</html>
