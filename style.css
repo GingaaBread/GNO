@@ -6,6 +6,10 @@
     color: var(--dark);
 }
 
+.alert {
+    margin: 2rem 0;
+}
+
 header {
     max-height: 10vh;
 }
@@ -75,6 +79,10 @@ main h2::before {
 
 main h2:hover::before {
     color: var(--light);
+}
+
+main h3 {
+    margin-top: 2rem;
 }
 
 p {
