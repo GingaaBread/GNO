@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://bevry-archive.github.io/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
+    <script type="text/javascript">$.SyntaxHighlighter.init();</script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../style.css">
+    <title>🖥️ GNO: Documentation</title>
+</head>
+<body>
+    <header class="d-flex align-items-center">
+        <svg></svg>
+        <div id="socials">Header</div>
+    </header>
+    <section class="d-flex justify-content-center">
+        <nav>
+            <ol>
+                <li><a href="../index.html"><h5>Start Here</h5></a></li>
+                <li>
+                    <a href="#"><h5>Essentials</h5></a>
+                    <ol>
+                        <li><a href="./Datatypes.html">Datatypes</a></li>
+                        <li>
+                            <a href="./Operators.html">Operators</a>
+                            <ol>
+                                <li><a href="../Operators.html">Mathematical Operators</a></li>
+                                <li class="current"><a href="./Operators/LogicalOperators.html">Logical Operators</a></li>
+                                <li><a href="./Operators/ComparisonOperators.html">Comparison Operators</a></li>
+                                <li><a href="./Operators/BitwiseOperators.html">Bitwise Operators</a></li>
+                                <li><a href="./Operators/SpecialOperators.html">Special Operators</a></li>
+                            </ol>
+                        </li>
+                        <li><a href="#">Conditions</a></li>
+                        <li><a href="#">Loops</a></li>
+                        <li><a href="#">Arrays</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#"><h5>Object Orientation</h5></a>
+                    <ol>
+                        <li><a href="#">Classes & Objects</a></li>
+                        <li><a href="#">Properties</a></li>
+                        <li><a href="#">Constructors</a></li>
+                        <li><a href="#">Methods</a></li>
+                        <li><a href="#">Protection Levels</a></li>
+                        <li><a href="#">Inheritance</a></li>
+                        <li><a href="#">Interfaces</a></li>
+                        <li><a href="#">Abstract Classes</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </nav>
+        <main>
+            <h1>Operators</h1>
+            <p>Operators enable you to manipulate data. Here is an overview of operators in GNO:</p>
+            
+            <a href="#logical"><h2 id="logical">Logical Operators</h2></a>
+
+            <a href="#l-not"><h3 id="l-not">Not Operator ! / not</h3></a>
+            <p>
+                The <code class="inline">!</code> / <code class="inline">not</code> operator returns a negated boolean, 
+                thus a boolean with the value <code class="inline">true</code> returns <code class="inline">false</code>, a boolean with the value 
+                <code class="inline">false</code> returns <code class="inline">true</code>. Note that the negated value is 
+                only returned, a boolean variable will <strong>not</strong> be assigned to its negated value (this can 
+                be done using the <code class="inline">~</code> operator discussed in Special Operators). 
+            </p>
+            <code class="highlight">
+                main class Example {
+                    print(!true) // false
+                    print(not true) // false
+                    print(!false) // true
+                    print(not false) // true
+
+                    boolean a = true
+                    print(!a) // false
+                    print(a) // true
+                }
+            </code>
+
+            <a href="#l-and"><h3 id="l-and">And Operator && / and</h3></a>
+            <p>
+                The <code class="inline">&&</code>/<code class="inline">and</code> operator returns <code class="inline">true</code>
+                if <strong>both</strong> operands are <code class="inline">true</code>. If one or both are <code class="inline">false</code>,
+                it returns <code class="inline">false</code>.
+            </p>
+            <code class="highlight">
+                main class Example {
+                    boolean learningGNO = true
+                    boolean havingFun = true
+
+                    print(learningGNO && havingFun) // true
+                    print(learningGNO and havingFun) // true
+                    print(learningGNO and !havingFun) // false
+                    print(!learningGNO and havingFun) // false
+                }
+            </code>
+
+            <a href="#l-or"><h3 id="l-or">Or Operator || / or</h3></a>
+            <p>
+                The <code class="inline">||</code>/<code class="inline">or</code> operator returns <code class="inline">true</code>
+                if <strong>at least one</strong> operand is <code class="inline">true</code>. If both are <code class="inline">false</code>,
+                it returns <code class="inline">false</code>.
+            </p>
+            <code class="highlight">
+                main class Example {
+                    boolean learningGNO = true
+                    boolean havingFun = true
+
+                    print(learningGNO || havingFun) // true
+                    print(learningGNO or havingFun) // true
+                    print(learningGNO or !havingFun) // true
+                    print(!learningGNO or !havingFun) // false
+                }
+            </code>
+
+            <a href="#l-xor"><h3 id="l-xor">XOR Operator ^ / xor</h3></a>
+            <p>
+                The <code class="inline">^</code>/<code class="inline">xor</code> operator returns <code class="inline">true</code>
+                if <strong>exactly one</strong> operand is <code class="inline">true</code>. If both are <code class="inline">false</code>,
+                or <code class="inline">true</code>, it returns <code class="inline">false</code>.
+            </p>
+            <code class="highlight">
+                main class Example {
+                    boolean learningGNO = true
+                    boolean havingFun = true
+
+                    print(learningGNO ^ havingFun) // false
+                    print(learningGNO xor !havingFun) // true
+                    print(!learningGNO xor havingFun) // true
+                    print(!learningGNO xor !havingFun) // false
+                }
+            </code>
+
+            <a href="#l-eagerand"><h3 id="l-eagerand">Eager And Operator &</h3></a>
+            <p>
+                The eager <code class="inline">&</code> operator behaves like the lazy And Operator 
+                <code class="inline">&&</code>/<code class="inline">and</code>, but still evaluates the right side even
+                if the left side has already been evaluated to <code class="inline">false</code>.
+            </p>
+            <code class="highlight">
+                Main() {
+                    print(false and Test()) // false
+                    print(false && Test()) // false
+                    print(false & Test()) // false; "Executed: Test()"
+                }
+
+                boolean Test() {
+                    print("Executed: Test()")
+                    return true
+                }
+            </code>
+
+            <a href="#l-eageror"><h3 id="l-eageror">Eager Or Operator |</h3></a>
+            <p>
+                The eager <code class="inline">|</code> operator behaves like the lazy Or Operator 
+                <code class="inline">||</code>/<code class="inline">or</code>, but still evaluates the right side even
+                if the left side has already been evaluated to <code class="inline">true</code>.
+            </p>
+            <code class="highlight">
+                Main() {
+                    print(true or Test()) // true
+                    print(false || Test()) // true
+                    print(true | Test()) // true; "Executed: Test()"
+                }
+
+                boolean Test() {
+                    print("Executed: Test()")
+                    return true
+                }
+            </code>
+
+            <a href="#l-order"><h3 id="l-order">Logical Operator Order</h3></a>
+            <p>Consider the following table with operators sorted from highest to lowest precedence.</p>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Operator</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Not: ! / not</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Eager And: &</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>XOR: ^</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Eager Or: |</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Lazy And: && / and</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Lazy Or: || / or</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="alert alert-info" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                </svg>
+                Use parantheses () to change the evaluation order
+                </div>
+        </main>
+        <aside>
+            <h1>On This Page</h1>
+            <ol>
+                <li><a href="#">Logical Operators</a></li>
+                <li>
+                    <ol>
+                        <li><a href="#l-not">Not ! / not</a></li>
+                        <li><a href="#l-and">And && / and</a></li>
+                        <li><a href="#l-or">Or || / or</a></li>
+                        <li><a href="#l-xor">XOR ^</a></li>
+                        <li><a href="#l-eagerand">Eager And &</a></li>
+                        <li><a href="#l-eageror">Eager Or |</a></li>
+                        <li><a href="#l-order">Evaluation Order</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </aside>
+    </section>
+</body> 
+</html>
