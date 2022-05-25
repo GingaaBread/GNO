@@ -215,28 +215,35 @@
 
             <a href="#m-grammar"><h3 id="m-grammar">Mathematical Operator Grammar</h3></a>
             <pre>
-            <div class="mermaid">
-                flowchart LR
-                    A[Mathematical Operator]-->B[Unary Mathematical Operator]
-                    C{+}-->I
-                    A[Mathematical Operator]-->C{+}-->J[=]
-                    A[Mathematical Operator]-->D{-}-->J[=]
-                    D{-}-->I
-                    A[Mathematical Operator]-->E{*}-->J[=]
-                    A[Mathematical Operator]-->F{/}-->J[=]
-                    F{/}-->I
-                    A[Mathematical Operator]-->G{%}-->J[=]
-                    A[Mathematical Operator]-->G{%}-->I
-                    A[Mathematical Operator]-->H{**}-->J[=]
-                    A[Mathematical Operator]-->H{**}-->I
-                    J[=]-->I
-            </div>
+                <div class="mermaid">
+                    flowchart LR
+                        A[Mathematical Operator]-->B[Unary Mathematical Operator]
+                        A[Mathematical Operator]-->C[Binary Mathematical Operator]
+                </div>
+            </pre>
+            <pre>
+                <div class="mermaid">
+                    flowchart LR
+                        A[Unary Mathematical Operator]-->C{++}-->I{{<em>END</em>}}
+                        A[Unary Mathematical Operator]-->D{--}-->I{{<em>END</em>}}
+                </div>
             </pre>
             <pre>
             <div class="mermaid">
                 flowchart LR
-                    A[Unary Mathematical Operator]-->C{++}
-                    A[Unary Mathematical Operator]-->D{--}
+                    C{+}-->I
+                    A[Binary Mathematical Operator]-->C{+}-->J[=]
+                    D{-}-->I
+                    A[Binary Mathematical Operator]-->D{-}-->J[=]
+                    E{*}-->I
+                    A[Binary Mathematical Operator]-->E{*}-->J[=]
+                    A[Binary Mathematical Operator]-->F{/}-->J[=]
+                    F{/}-->I
+                    A[Binary Mathematical Operator]-->G{%}-->J[=]
+                    G{%}-->I
+                    A[Binary Mathematical Operator]-->H{**}-->J[=]
+                    H{**}-->I
+                    J[=]-->I{{<em>END</em>}}
             </div>
             </pre>
         </main>

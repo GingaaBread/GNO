@@ -8,6 +8,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://bevry-archive.github.io/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
     <script type="text/javascript">$.SyntaxHighlighter.init();</script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../../../style.css">
     <title>🖥️ GNO: Documentation</title>
@@ -216,6 +218,35 @@
                     </svg>
                     Use parantheses () to change the evaluation order
                 </div>
+                <a href="#l-grammar"><h3 id="l-grammar">Logical Operator Grammar</h3></a>
+                <pre>
+                <div class="mermaid">
+                    flowchart LR
+                        A[Logical Operator]-->B[Unary Logical Operator]
+                        A[Logical Operator]-->C[Binary Logical Operator]
+                </div>
+                </pre>
+                <pre>
+                    <div class="mermaid">
+                        flowchart LR
+                            A[Unary Logical Operator]-->B{!}-->H{{<em>END</em>}}
+                            A[Unary Logical Operator]-->C{not}-->H{{<em>END</em>}}
+                    </div>
+                    </pre>
+                <pre>
+                <div class="mermaid">
+                    flowchart LR
+                        A[Binary Logical Operator]-->C{and}-->K{{<em>END</em>}}
+                        A[Binary Logical Operator]-->D{&&}-->K{{<em>END</em>}}
+                        A[Binary Logical Operator]-->E{&}-->K{{<em>END</em>}}
+                        A[Binary Logical Operator]-->F{or}-->K{{<em>END</em>}}
+                        A[Binary Logical Operator]-->G{"||"}-->K{{<em>END</em>}}
+                        A[Binary Logical Operator]-->H{"|"}-->K{{<em>END</em>}}
+                        A[Binary Logical Operator]-->I{xor}-->K{{<em>END</em>}}
+                        A[Binary Logical Operator]-->J{^}-->K{{<em>END</em>}}
+                        
+                </div>
+                </pre>
         </main>
         <aside>
             <h1>On This Page</h1>
@@ -226,10 +257,11 @@
                         <li><a href="#l-not">Not ! / not</a></li>
                         <li><a href="#l-and">And && / and</a></li>
                         <li><a href="#l-or">Or || / or</a></li>
-                        <li><a href="#l-xor">XOR ^</a></li>
+                        <li><a href="#l-xor">XOR ^ / xor</a></li>
                         <li><a href="#l-eagerand">Eager And &</a></li>
                         <li><a href="#l-eageror">Eager Or |</a></li>
                         <li><a href="#l-order">Evaluation Order</a></li>
+                        <li><a href="#l-grammar">Grammar</a></li>
                     </ol>
                 </li>
             </ol>
