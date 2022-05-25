@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://bevry-archive.github.io/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
+    <script type="text/javascript">$.SyntaxHighlighter.init();</script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../style.css">
+    <title>🖥️ GNO: Documentation</title>
+</head>
+<body>
+    <header class="d-flex align-items-center">
+        <svg></svg>
+        <div id="socials">Header</div>
+    </header>
+    <section class="d-flex justify-content-center">
+        <nav>
+            <ol>
+                <li><a href="../index.html"><h5>Start Here</h5></a></li>
+                <li>
+                    <a href="#"><h5>Essentials</h5></a>
+                    <ol>
+                        <li><a href="./Datatypes.html">Datatypes</a></li>
+                        <li>
+                            <a href="./Operators.html">Operators</a>
+                            <ol>
+                                <li><a href="../Operators.html">Mathematical Operators</a></li>
+                                <li><a href="./LogicalOperators.html">Logical Operators</a></li>
+                                <li class="current"><a href="./ComparisonOperators.html">Comparison Operators</a></li>
+                                <li><a href="./BitwiseOperators.html">Bitwise Operators</a></li>
+                                <li><a href="./SpecialOperators.html">Special Operators</a></li>
+                            </ol>
+                        </li>
+                        <li><a href="#">Conditions</a></li>
+                        <li><a href="#">Loops</a></li>
+                        <li><a href="#">Arrays</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#"><h5>Object Orientation</h5></a>
+                    <ol>
+                        <li><a href="#">Classes & Objects</a></li>
+                        <li><a href="#">Properties</a></li>
+                        <li><a href="#">Constructors</a></li>
+                        <li><a href="#">Methods</a></li>
+                        <li><a href="#">Protection Levels</a></li>
+                        <li><a href="#">Inheritance</a></li>
+                        <li><a href="#">Interfaces</a></li>
+                        <li><a href="#">Abstract Classes</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </nav>
+        <main>
+            <h1>Operators</h1>
+            <p>Operators enable you to manipulate data. Here is an overview of operators in GNO:</p>
+            
+            <a href="#comparison"><h2 id="comparison">Comparison Operators</h2></a>
+
+            <a href="#c-lesser"><h3 id="c-lesser">Lesser Than Operator &lt;</h3></a>
+            <p>
+                The <code class="inline">&lt;</code> operator returns 
+                <code class="inline">true</code> if the left operand is lesser than the right operand.
+                Else, it returns <code class="inline">false</code>
+            </p>
+            <code class="highlight">
+                main class Example {
+                    print(5 &lt; 3) // false
+                    print(3 &lt; 5) // true
+                    print(3 &lt; 3) // false
+                }
+            </code>
+
+            <a href="#c-greater"><h3 id="c-greater">Greater Than Operator &gt;</h3></a>
+            <p>
+                The <code class="inline">&gt;</code> operator returns 
+                <code class="inline">true</code> if the left operand is greater than the right operand.
+                Else, it returns <code class="inline">false</code>
+            </p>
+            <code class="highlight">
+                main class Example {
+                    print(5 &gt; 3) // true
+                    print(3 &gt; 5) // false
+                    print(3 &lt; 3) // false
+                }
+            </code>
+
+            <a href="#c-lessequal"><h3 id="c-lessequal">Lesser Than Or Equal To Operator &lt;=</h3></a>
+            <p>
+                The <code class="inline">&lt;=</code> operator returns 
+                <code class="inline">true</code> if the left operand is lesser than or equal to the right operand.
+                Else, it returns <code class="inline">false</code>
+            </p>
+            <code class="highlight">
+                main class Example {
+                    print(5 &lt;= 3) // false
+                    print(3 &lt;= 5) // true
+                    print(3 &lt;= 3) // true
+                }
+            </code>
+
+            <a href="#c-greaterequal"><h3 id="c-greaterequal">Greater Than Or Equal To Operator &gt;=</h3></a>
+            <p>
+                The <code class="inline">&gt;=</code> operator returns 
+                <code class="inline">true</code> if the left operand is greater than or equal to the right operand.
+                Else, it returns <code class="inline">false</code>
+            </p>
+            <code class="highlight">
+                main class Example {
+                    print(5 &gt;= 3) // true
+                    print(3 &gt;= 5) // false
+                    print(3 &gt;= 3) // true
+                }
+            </code>
+
+            <a href="#c-equal"><h3 id="c-equal">Equal To Operator == / is</h3></a>
+            <p>
+                The <code class="inline">==</code>/<code class="inline">is</code> operator returns 
+                <code class="inline">true</code> if the left operand is equal to the right operand.
+                Else, it returns <code class="inline">false</code>
+            </p>
+            <code class="highlight">
+                main class Example {
+                    print(5 == 3) // false
+                    print(5 is 3) // false
+                    print(3 == 5) // false
+                    print(3 is 5) // false
+                    print(3 == 3) // true
+                    print(3 is 3) // true
+
+                    string hello = "World"
+                    print(hello == "Hello") // false
+                    print(hello == "World") // true
+                }
+            </code>
+
+            <div class="alert alert-info" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                </svg>
+                A boolean is already a true or false expression, so instead of checking for equality like 'myBoolean == true'
+                you can use the boolean directly: 'myBoolean'
+            </div>
+            <p>
+                It is also used to check if a variable is of a certain type. 
+                It returns <code class="inline">true</code> if the variable is of the specified type. 
+            </p>
+            <code class="highlight">
+                main class Example {
+                    print(5 is int) // true
+                    print(5d is int) // false
+
+                    myObject = new MyObject()
+                    print(5 is MyObject) // false
+                    print(myObject is MyObject) // true
+
+                    myParentObject = new MyParentObject() // Parent of the MyObject class
+                    print(myParentObject is MyObject) // true
+                }
+            </code>
+
+            <a href="#c-caseequal"><h3 id="c-caseequal">Case Equal To Operator ~= / equals</h3></a>
+            <p>
+                The <code class="inline">~=</code>/<code class="inline">equals</code> operator returns 
+                <code class="inline">true</code> if the left operand is equal to the right operand after
+                casting the type of the right operand to the type of the left operand.
+                Else, it returns <code class="inline">false</code>
+            </p>
+            <code class="highlight">
+                main class Example {
+                    print(5 ~= "3") // false
+                    print(5 equals "3") // false
+                    print(3 ~= "3") // true
+                    print(3 equals "3") // true
+                    print(3 ~= 3.5d) // true
+                    print(3 equals 3.5d) // true
+                }
+
+                <p>
+                    Internally, GNO first casts the right operand to the left and then 
+                    checks for equality. Thus, <code class="inline">print(5 ~= "3")</code>
+                    evaluates to <coded class="inline">print(5 == (int) "3")</coded>
+                </p>
+            </code>
+        </main>
+        <aside>
+            <h1>On This Page</h1>
+            <ol>
+                <li><a href="#">Logical Operators</a></li>
+                <li>
+                    <ol>
+                        <li><a href="#c-lesser">&lt;</a></li>
+                        <li><a href="#c-greater">&gt;</a></li>
+                        <li><a href="#c-lessequal">&lt;=</a></li>
+                        <li><a href="#c-greaterequal">&gt;=</a></li>
+                        <li><a href="#c-equal">== / is</a></li>
+                        <li><a href="#c-caseequal">~= / equals</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </aside>
+    </section>
+</body> 
+</html>

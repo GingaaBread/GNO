@@ -8,6 +8,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://bevry-archive.github.io/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
     <script type="text/javascript">$.SyntaxHighlighter.init();</script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../../style.css">
     <title>🖥️ GNO: Documentation</title>
@@ -188,7 +190,7 @@
                 Note that you <strong>cannot</strong> use both operators (for instance ++i++) simultaneously!
             </div>
 
-            <a href="#m-cardinality"><h3 id="#m-cardinality">Cardinality Operator |</h3></a>
+            <a href="#m-cardinality"><h3 id="m-cardinality">Cardinality Operator |</h3></a>
             <p>
                 For Arrays and other data Structures like Lists, Stacks, and Queues, 
                 using the cardinality operators |[Data Structure]| will return the amount of elements
@@ -211,6 +213,32 @@
                 Arrays are discussed in a later chapter
             </div>
 
+            <a href="#m-grammar"><h3 id="m-grammar">Mathematical Operator Grammar</h3></a>
+            <pre>
+            <div class="mermaid">
+                flowchart LR
+                    A[Mathematical Operator]-->B[Unary Mathematical Operator]
+                    C{+}-->I
+                    A[Mathematical Operator]-->C{+}-->J[=]
+                    A[Mathematical Operator]-->D{-}-->J[=]
+                    D{-}-->I
+                    A[Mathematical Operator]-->E{*}-->J[=]
+                    A[Mathematical Operator]-->F{/}-->J[=]
+                    F{/}-->I
+                    A[Mathematical Operator]-->G{%}-->J[=]
+                    A[Mathematical Operator]-->G{%}-->I
+                    A[Mathematical Operator]-->H{**}-->J[=]
+                    A[Mathematical Operator]-->H{**}-->I
+                    J[=]-->I
+            </div>
+            </pre>
+            <pre>
+            <div class="mermaid">
+                flowchart LR
+                    A[Unary Mathematical Operator]-->C{++}
+                    A[Unary Mathematical Operator]-->D{--}
+            </div>
+            </pre>
         </main>
         <aside>
             <h1>On This Page</h1>
@@ -228,6 +256,7 @@
                         <li><a href="#m-compounds">Compounds</a></li>
                         <li><a href="#m-prefixpostfix">Prefix & Postfix</a></li>
                         <li><a href="#m-cardinality">Cardinality</a></li>
+                        <li><a href="#m-grammar">Grammar</a></li>
                     </ol>
                 </li>
             </ol>
