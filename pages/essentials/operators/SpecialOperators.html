@@ -63,9 +63,9 @@
             
             <a href="#special"><h2 id="special">Special Operators</h2></a>
 
-            <a href="#o-negation"><h3 id="o-negation">Negation Operator ~</h3></a>
+            <a href="#s-negation"><h3 id="s-negation">Negation Operator ~</h3></a>
             <p>
-                The <code class="inline">~</code> operator negates a boolean without returning it.
+                The <code class="inline">~</code> operator negates a boolean variable without returning it.
             </p>
             <code class="highlight">
                 main class Example {
@@ -77,8 +77,75 @@
                     print(~errorOccured) // ERROR: ~errorOccured is not a boolean
                 }
             </code>
+            <a href="#s-exists"><h3 id="s-exists">Exists / !Exists Operator</h3></a>
+            <p>
+                The <code class="inline">exists</code> shortcut operator/keyword checks if a variable contains a non-null value. It evaluates to <code class="inline">X != null</code>.
+            </p>
+            <code class="highlight">
+                main class Example {
+                    MyObject myObject
+                    print(myObject exists) // false
 
-            <a href="#o-arrow"><h3 id="o-negation">Arrow Operator =></h3></a>
+                    myObject = new MyObject("Hello World!")
+                    
+                    if (myObject exists) {
+                        string greeting = myObject.greeting
+                        print("Greeting: " + greeting)
+                    }
+                    
+                    // "Greeting: Hello World!"
+                }
+            </code>
+            <p>
+                The <code class="inline">!exists</code> shortcut operator/keyword checks if a variable contains a null value. 
+                It evaluates to <code class="inline">X == null</code>.
+            </p>
+
+            <a href="#s-ternary"><h3 id="s-ternary">Ternary Operator ?:</h3></a>
+            <p>
+                The <code class="inline">A ? B : C</code> operator checks a Boolean expression <em>A</em> and then returns the result
+                of one of two expressions depending on whether <em>A</em> was <code class="inline">true</code> or <code class="inline">false</code>. 
+            </p>
+            <code class="highlight">
+                main class Example {
+                    i = 404
+                    string errorType = i == 404 ? "Not Found" : "Error"
+                    print(errorType) // "Not Found"
+                }
+            </code>
+
+            <a href="#s-evaluation"><h3 id="s-evaluation">Evaluation Operator ? ?: :</h3></a>
+            <p>
+                The <code class="inline">E0 ? E1 ?: E2 ?: E... : B</code> operator checks a range of Boolean expressions <em>E...</em> and then returns the result
+                of the one expression that evaluated to <code class="inline">true</code>. If none evaluated to true, it returns the result of the expression in <code class="inline">B</code>. 
+                This resembles an inline if / else if / else. The evaluate() function can be used for this purpose as well.  
+            </p>
+            <code class="highlight">
+                main class Example {
+                    int errorType = 404
+                    string message
+
+                    message = errorType == 401 ? "Unauthorized" ?: errorType == 402 ? "Payment Required" ?: errorType == 404 ? "Not Found" : "Error"
+
+                    // =
+
+                    message = errorType.evaluate([401:"Unauthorized", 402:"Payment Required", 404:"Not Found", "Error"])
+                    
+                    // =
+
+                    if (errorType == 401) {
+                        message = "Unauthorized"
+                    } else if (errorType == 402) {
+                        message = "Payment Required"
+                    } else if (errorType == 404) {
+                        message = "Not Found"
+                    } else {
+                        message = "Error"
+                    }
+                }
+            </code>
+
+            <a href="#s-arrow"><h3 id="s-arrow">Arrow Operator =></h3></a>
             <p>
                 The <code class="inline">=></code> operator is used in lamda expressions and expression bodies.
             </p>
@@ -88,7 +155,7 @@
                 string GenerateString() => "Hello World"
             </code>
 
-            <a href="#o-identity"><h3 id="o-identity">Identity Operator #</h3></a>
+            <a href="#s-identity"><h3 id="s-identity">Identity Operator #</h3></a>
             <p>
                 The <code class="inline">#</code> operator has a wide range of meanings in different contexts.
                 For example, in streams, it references the current element, in foreach loops, it references the index, etc.
@@ -105,7 +172,7 @@
                 }
             </code>
 
-            <a href="#o-identity"><h3 id="o-identity">Variety Operator :</h3></a>
+            <a href="#s-variety"><h3 id="s-variety">Variety Operator :</h3></a>
             <p>
                 The <code class="inline">:</code> operator has a wide range of meanings in different contexts.
                 For example, you can use <code class="inline">:properties</code> to bundle together properties,
@@ -117,7 +184,7 @@
                 string message = errorType.compare([401:"Unauthorized", 402:"Payment Required", 403:"Not Found", "Error"])
             </code> 
 
-            <a href="#o-grammar"><h3 id="o-grammar">Comparison Operator Grammar</h3></a>
+            <a href="#s-grammar"><h3 id="s-grammar">Comparison Operator Grammar</h3></a>
             <pre>
                 <div class="mermaid">
                     flowchart LR
@@ -138,8 +205,9 @@
                 <li><a href="#">Logical Operators</a></li>
                 <li>
                     <ol>
-                        <li><a href="#o-negation">~</a></li>
-                        <li><a href="#o-grammar">Grammar</a></li>
+                        <li><a href="#s-negation">~</a></li>
+                        <li><a href="#s-exists">~</a></li>
+                        <li><a href="#s-grammar">Grammar</a></li>
                     </ol>
                 </li>
             </ol>
