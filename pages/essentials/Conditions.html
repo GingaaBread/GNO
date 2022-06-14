@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://bevry-archive.github.io/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
+    <script type="text/javascript">$.SyntaxHighlighter.init();</script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../style.css">
+    <title>🖥️ GNO: Documentation</title>
+</head>
+<body>
+    <header class="d-flex align-items-center">
+        <svg></svg>
+        <div id="socials">Header</div>
+    </header>
+    <section class="d-flex justify-content-center">
+        <nav>
+            <ol>
+                <li><a href="../index.html"><h5>Start Here</h5></a></li>
+                <li>
+                    <a href="#"><h5>Essentials</h5></a>
+                    <ol>
+                        <li><a href="./Datatypes.html">Datatypes</a></li>
+                        <li><a href="./Operators.html">Operators</a></li>
+                        <li class="current"><a href="#">Conditions</a></li>
+                        <li><a href="#">Loops</a></li>
+                        <li><a href="#">Arrays</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#"><h5>Object Orientation</h5></a>
+                    <ol>
+                        <li><a href="#">Classes & Objects</a></li>
+                        <li><a href="#">Properties</a></li>
+                        <li><a href="#">Constructors</a></li>
+                        <li><a href="#">Methods</a></li>
+                        <li><a href="#">Protection Levels</a></li>
+                        <li><a href="#">Inheritance</a></li>
+                        <li><a href="#">Interfaces</a></li>
+                        <li><a href="#">Abstract Classes</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </nav>
+        <main>
+            <h1>Conditions</h1>
+            <p>
+                Conditions allow you to execute code depending on the evaluation of a boolean expression 
+            </p>
+
+            <a href="#if"><h2 id="if">If Condition</h2></a>
+            <p>
+                The <code class="inline">if</code> condition evaluates a boolean expression and only executes the code 
+                body if the evaluation is <code class="inline">true</code>
+            </p>
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        int a = 2
+
+                        if (a is 2) {
+                            print("Hello World")
+                        }
+
+                        if (a is 5) {
+                            print("Are you still there?")
+                        }
+
+                        // Output: "Hello World"
+                    }
+                </code>
+            </pre>
+
+            <p>
+                The round brackets within the if-clause <code class="inline">( )</code> are optional. The parser will try to 
+                evaluate the section between the <code class="inline">if</code> and the condition bracket 
+                <code class="inline">{</code> as a boolean expression.
+            </p>
+
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        int a = 2
+
+                        if a is 2 {
+                            print("Hello World")
+                        }
+
+                        if a is 5 {
+                            print("Are you still there?")
+                        }
+
+                        // Output: "Hello World"
+                    }
+                </code>
+            </pre>
+            <a href="#else-if"><h2 id="else-if">Else If Condition</h2></a>
+            <p>
+                The <code class="inline">else if</code> condition specifies a new condition if the former if or else-if clauses
+                evaluated to <code class="inline">false</code>. It will not execute its body, if a former if or else-if clause 
+                evaluated to <code class="inline">true</code>.
+            </p>
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        int a = 2
+                        int b = 5
+
+                        if (a is 0) {
+                            print("Let's see...")
+                        }
+                        else if (a is 2) {
+                            print("Hello World")
+                        }
+                        else if (b is 5) {
+                            print("Are you still there?")
+                        }
+
+                        // Output: "Hello World"
+                    }
+                </code>
+            </pre>
+
+            <a href="#else"><h2 id="else">Else Condition</h2></a>
+            <p>
+                The <code class="inline">else</code> condition will execute code if no former if or else-if clause
+                evaluated to <code class="inline">true</code>. It will not execute its body, if a former if or else-if clause 
+                evaluated to <code class="inline">true</code>.
+            </p>
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        int a = 2
+
+                        if (a is 0) {
+                            print("Let's see...")
+                        }
+                        else if (a is 5) {
+                            print("Hello World")
+                        }
+                        else {
+                            print("Something else...")
+                        }
+
+                        // Output: "Something else..."
+                    }
+                </code>
+            </pre>
+        </main>
+        <aside>
+            <h1>On This Page</h1>
+            <ol>
+                <li><a href="#int">int</a></li>
+                <li><a href="#long">long</a></li>
+                <li><a href="#single">single</a></li>
+                <li><a href="#double">double</a></li>
+                <li><a href="#char">char</a></li>
+                <li><a href="#string">string</a></li>
+                <li><a href="#boolean">boolean</a></li>
+            </ol>
+        </aside>
+    </section>
+</body> 
+</html>
