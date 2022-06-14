@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://bevry-archive.github.io/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
+    <script type="text/javascript">$.SyntaxHighlighter.init();</script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../style.css">
+    <title>🖥️ GNO: Documentation</title>
+</head>
+<body>
+    <header class="d-flex align-items-center">
+        <svg></svg>
+        <div id="socials">Header</div>
+    </header>
+    <section class="d-flex justify-content-center">
+        <nav>
+            <ol>
+                <li><a href="../index.html"><h5>Start Here</h5></a></li>
+                <li>
+                    <a href="#"><h5>Essentials</h5></a>
+                    <ol>
+                        <li><a href="./Datatypes.html">Datatypes</a></li>
+                        <li><a href="./Operators.html">Operators</a></li>
+                        <li><a href="#">Conditions</a></li>
+                        <li><a href="#">Loops</a></li>
+                        <li><a href="#">Arrays</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#"><h5>Object Orientation</h5></a>
+                    <ol>
+                        <li><a href="#">Classes & Objects</a></li>
+                        <li><a href="#">Properties</a></li>
+                        <li><a href="#">Constructors</a></li>
+                        <li><a href="#">Methods</a></li>
+                        <li><a href="#">Protection Levels</a></li>
+                        <li><a href="#">Inheritance</a></li>
+                        <li><a href="#">Interfaces</a></li>
+                        <li><a href="#">Abstract Classes</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#"><h5>Exceptions, Errors & Event</h5></a>
+                    <ol>
+                        <li class="current"><a href="#">Exceptions</a></li>
+                        <li><a href="#">Errors</a></li>
+                        <li><a href="#">Event Interface</a></li>
+                        <li><a href="#">Invoking Events</a></li>
+                        <li><a href="#">@Events</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </nav>
+        <main>
+            <h1>Exceptions</h1>
+            <p>
+                Exceptions signalise exceptional situations occuring in a program. When they occur, the program 
+                will be instantly terminated completely disrupting the normal program flow. 
+            </p>
+
+            <p>
+                Example situations could be:
+                <ul>
+                    <li>A variable has a <code class="inline">null</code> value, but the programmer attempts to access a field</li>
+                    <li>A programmer calls a method with a negative method argument, but the method requires positive arguments</li>
+                    <li>A programmer attempts to access the seventh item of an array with only four elements</li>
+                </ul>
+            </p>
+
+            <a href="#example"><h2 id="example">Example Implementations</h2></a>
+
+            <h3>1. Shop</h3>
+            <pre>
+                <code class="highlight">
+                    event ProductRestock(string productName)
+                </code>
+            </pre>
+            
+            <pre>
+                <code class="highlight">
+                    class Shop {
+                        // ...
+                        void RestockItems(Item[] newItems) {
+                            foreach newItem in newItems {
+                                if ShelfMissesItem(newItem) {
+                                    // Now the item is available again
+                                    @ProductRestock(newItem.name)
+                                }
+                                AddToShelf(newItem) 
+                            }
+                        }
+                        // ...
+                    }
+                </code>
+            </pre>
+
+            <pre>
+                <code class="highlight">
+                    class Customer {
+                        // ...
+                        string emailAddress
+
+                        subscribe @ProductRestock("Goobidoo Founder's Edition") => SendMail("Goobidoo Founder's Edition is available again!")
+
+                        SendMail(string content) => MailHandler.SendMailWithTemplate(emailAddress, content)
+                    }
+                </code>
+            </pre>
+
+            <h3>2. Game</h3>
+            <pre>
+                <code class="highlight">
+                    :events {
+                        Jump,
+                        Move(Direction towards),
+                        Death
+                    }
+                </code>
+            </pre>
+            
+            <pre>
+                <code class="highlight">
+                    class Player {
+                        // ...
+                        void TakeDamage(int damageAmount) {
+                            hp -= damageAmount
+                            if hp &lt; 0 {
+                                @Death
+                            }
+                        }
+                        // ...
+                    }
+                </code>
+            </pre>
+
+            <pre>
+                <code class="highlight">
+                    class AudioSystem {
+                        // ...
+                        :subscriptions {
+                            @Jump => PlaySound("Jump"),
+                            @Move => PlaySound("Movement"),
+                            @Death => PlaySound("PlayerDeath") 
+                        }
+                        // ...
+                    }
+                </code>
+            </pre>
+
+            <pre>
+                <code class="highlight">
+                    class GameManager {
+                        // ...
+                        subscribe @Death => LoadCheckpoint()
+
+                        void OnKeyPressed(string key) {
+                            if key is "Space" or "Gamepad/Cross" {
+                                @Jump
+                            } else {
+                                @Move(switch key {
+                                    "W" or "Gamepad/LeftStickUp" => Direction.up,
+                                    "A" or "Gamepad/LeftStickLeft" => Direction.left,
+                                    "S" or "Gamepad/LeftStickDown" => Direction.down,
+                                    "D" or "Gamepad/LeftStickRight" => Direction.right
+                                })
+                            }
+                        }
+                        // ...
+                    }
+                </code>
+            </pre>
+
+            <div class="alert alert-danger" role="alert">
+                <h6>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                    Output:
+                </h6>
+                gno.err.Exception: "The server is not yet running." at GNOTest.main(2)
+            </div>
+
+            <p>It is recommended to use exceptions that fit semantically to the respective problem. 
+                You can use a multitude of predefined exceptions.</p>
+            <a href="#exceptions"><h2 id="exceptions">Predefined Exceptions</h2></a>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Package</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Example</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">gno.err.Exception</th>
+                    <td>Exception</td>
+                    <td>The default exception</td>
+                    <td>Any generic case</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">gno.err.OutOfBoundsException</th>
+                    <td>OutOfBoundsException</td>
+                    <td>A value is not within bounds of a certain range</td>
+                    <td>Trying to get the first element of an empty list</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">gno.err.IllegalArgumentException</th>
+                    <td>IllegalArgumentException</td>
+                    <td>One or more arguments of a called method are not allowed</td>
+                    <td>Passing a string with too many characters</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">gno.err.IllegalOperationException</th>
+                    <td>IllegalOperationException</td>
+                    <td>An operation is not allowed</td>
+                    <td>Dividing by zero</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">gno.err.CastException</th>
+                    <td>CastException</td>
+                    <td>A cast cannot be done</td>
+                    <td>Illegally casting a class to another class</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">gno.err.IllegalStateException</th>
+                    <td>IllegalStateException</td>
+                    <td>An operation is called at an inappropriate time or in a wrong state</td>
+                    <td>Accessing a closed stream</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">gno.err.NullAccessException</th>
+                    <td>NullAccessException</td>
+                    <td>A null value is accessed</td>
+                    <td>Not instantiating an object, but trying to call its method</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">gno.err.NotImplementedException</th>
+                    <td>NotImplementedException</td>
+                    <td>A functionality is not (yet) implemented</td>
+                    <td>Calling a not yet fully finished method</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">gno.err.StackOverflowException</th>
+                    <td>StackOverflowException</td>
+                    <td>An overflow has occured on the stack</td>
+                    <td>Using recursion, but forgetting the exit condition</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">gno.err.IllegalFormatException</th>
+                    <td>IllegalFormatException</td>
+                    <td>A type does not adhere to a certain format</td>
+                    <td>Passing a date in the DD/MM/YYYY format instead of the YYYY/MM/DD format</td>
+                  </tr>
+                </tbody>
+              </table>
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        ExampleClass exampleClass
+                        exampleClass.foo()
+                    }
+                </code>
+            </pre>
+            <div class="alert alert-danger" role="alert">
+                <h6>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                    Output:
+                </h6>
+                gno.err.NullAccessException: "Accessing a value with a null type." at GNOTest.main(3)
+            </div>
+
+            <a href="#IllegalArgumentException"><h2 id="IllegalArgumentException">IllegalArgumentException</h2></a>
+            <p>
+                You can automatically check for illegal method arguments by adding a preset or custom boolean to a 
+                method parameter. If the method is called with an argument, which does not adhere to the restriction, 
+                an IllegalArgumentException will be thrown.
+            </p>
+
+            <h4>Presets:</h4>
+            <ul>
+                <li>positive / + (#&gt;0)</li>
+                <li>negative / - (#&lt;0)</li>
+                <li>notnull / # (#!=null)</li>
+                <li>notempty / | (|#|>0)</li>
+            </ul>
+
+            <pre>
+                <code class="highlight language-ruby">
+                    class GNOTest {
+                        void Main() {
+                            TransferMoney(5,-1.5d,null,"AB3937806");  
+                        }
+
+                        // Presets
+                        void TransferMoney(int amount:positive, double taxeReduction:-, Account account:#, string id:|) {}
+                    
+                        // Custom Boolean Expression
+                        void CustomExample(int:#&gt;5&&#&lt;2) {}
+                    }
+                </code>
+            </pre>
+            <div class="alert alert-danger" role="alert">
+                <h6>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                    Output:
+                </h6>
+                gno.err.IllegalArgumentException: "Argument 'account' must not be null" at GNOTest.main(2)
+            </div>
+        </main>
+        <aside>
+            <h1>On This Page</h1>
+            <ol>
+                <li><a href="#throw">Throwing Exceptions</a></li>
+                <li><a href="#exceptions">Predefined Exceptions</a></li>
+                <li><a href="#IllegalArgumentException">IllegalArgumentException</a></li>
+            </ol>
+        </aside>
+    </section>
+</body> 
+</html>
