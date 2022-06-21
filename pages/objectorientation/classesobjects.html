@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://bevry-archive.github.io/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
+    <script type="text/javascript">$.SyntaxHighlighter.init();</script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../style.css">
+    <title>🖥️ GNO: Documentation</title>
+</head>
+<body>
+    <header class="d-flex align-items-center">
+        <svg></svg>
+        <div id="socials">Header</div>
+    </header>
+    <section class="d-flex justify-content-center">
+        <nav>
+            <ol>
+                <li><a href="../index.html"><h5>Start Here</h5></a></li>
+                <li>
+                    <a href="#"><h5>Essentials</h5></a>
+                    <ol>
+                        <li><a href="./essentials/Datatypes.html">Datatypes</a></li>
+                        <li><a href="./pages/essentials/Operators.html">Operators</a></li>
+                        <li><a href="#">Conditions</a></li>
+                        <li><a href="#">Loops</a></li>
+                        <li><a href="#">Arrays</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#"><h5>Object Orientation</h5></a>
+                    <ol>
+                        <li class="current"><a href="#">Classes & Objects</a></li>
+                        <li><a href="#">Properties</a></li>
+                        <li><a href="#">Constructors</a></li>
+                        <li><a href="#">Methods</a></li>
+                        <li><a href="#">Protection Levels</a></li>
+                        <li><a href="#">Inheritance</a></li>
+                        <li><a href="#">Interfaces</a></li>
+                        <li><a href="#">Abstract Classes</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </nav>
+        <main>
+            <h1>Classes & Objects</h1>
+
+            <a href="#classes"><h2 id="classes">Classes</h2></a>
+            <p>Classes are created using the <code class="inline">class</code> keyword. By default, they are public.</p>
+            <pre>
+                <code class="highlight">
+                    class Fraction {
+                    }
+                </code>
+            </pre>
+            <p>Classes can contain <a href="#">properties</a>, <a href="#">events</a>, and <a href="#">methods</a>.</p>
+            <pre>
+                <code class="highlight">
+                    class Fraction {
+                        // Properties
+                        private int numerator
+                        private int denominator
+
+                        // Constructor
+                        constructor(int n, int d) {
+                            numerator = n
+                            denominator = d
+                        }
+
+                        // Methods
+                        double ToDouble() {
+                            return numerator / denominator
+                        }
+
+                        overriden String ToString() {
+                            return `${numerator} / ${denominator}` 
+                        }
+                    }
+                </code>
+            </pre>
+            <p>GNO allows using structures to simplify this process:</p>
+            <pre>
+                <code class="highlight">
+                    class Fraction {
+                        :properties {
+                            int numerator
+                            int denominator
+                        }
+
+                        constructor(:properties)
+
+                        :methods {
+                            double ToDouble() => numerator / denominator
+                            overriden String ToString() => `${numerator} / ${denominator}` 
+                        }
+                    }
+                </code>
+            </pre>
+
+            <a href="#objects"><h2 id="objects">Objects</h2></a>
+            <p>Objects are specific instances of classes.</p>
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        f1 = new Fraction(1,5)
+                        f2 = new Fraction(2,5)
+                        f3 = new Fraction() // Syntax Error: Needs a numerator and denominator as arguments
+                        
+                        print(f1.ToDouble()) // 0.2d
+                        print(f2.ToDouble()) // 0.4d
+
+                        print(f1) // = f1.ToString() = "1/5"
+                        print(f2) // = f2.ToString() = "2/5"
+                    }
+
+                    class Fraction {
+                        :properties {
+                            int numerator
+                            int denominator
+                        }
+
+                        constructor(:properties)
+
+                        :methods {
+                            double ToDouble() => numerator / denominator
+                            overriden String ToString() => `${numerator} / ${denominator}` 
+                        }
+                    }
+                </code>
+            </pre>
+
+                <a href="#main"><h2 id="main">Main Classes</h2></a>
+                <p>
+                    Your project can contain exactly one class preceded by the <code class="inline">main</code> 
+                    keyword. Main classes act like being in a void Main() {} method and hence may online contain
+                    code that would be allowed in the main method.
+                </p>
+                <pre>
+                    <code class="highlight">
+                        main class GNOTest {
+                            print("Hello World"); // "Hello World"
+                        }
+
+                        // =
+    
+                        class GNOTest {
+                            void Main() {
+                                print("Hello World") // "Hello World"
+                            }
+                        }
+                    </code>
+            </pre>
+        </main>
+        <aside>
+            <h1>On This Page</h1>
+            <ol>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#objects">Objects</a></li>
+                <li><a href="#objects">Main Class</a></li>
+            </ol>
+        </aside>
+    </section>
+</body> 
+</html>

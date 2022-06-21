@@ -2,6 +2,7 @@
     --dark: #3d3a3a;
     --light: rgb(234, 234, 234);
     --gray: rgb(174, 174, 174);
+    --link: #0daea6;
     scroll-behavior: smooth;
     color: var(--dark);
 }
@@ -45,6 +46,13 @@ nav li.current::before {
 a {
     text-decoration: none;
     color: var(--dark);
+}
+
+p a {
+    color: var(--link);
+    background-color: var(--light);
+    padding: .2rem;
+    border-radius: .3rem;
 }
 
 main {
