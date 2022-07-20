@@ -150,17 +150,129 @@
                     }
                 </code>
             </pre>
+
+            <a href="#switch"><h2 id="switch">Switch</h2></a>
+            <p>
+                The <code class="inline">switch</code> condition works very similar to <code class="inline">if</code> and <code class="inline">else if</code> statements combined into one construct.
+            </p>
+
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        AnimalType animalType = AnimalType.DOG
+
+                        switch (animalType) {
+                            case AnimalType.DOG: 
+                                print("Woof!")
+                            case AnimalType.WOLF:
+                                print("?")
+                            default:
+                                print("This animal doesn't seem to have a sound!")
+                        }
+                    }
+                </code>
+            </pre>
+
+            <p>Just like with <code class="inline">if</code> constructs, you can also leave out the parantheses <code class="inline">()</code> surrounding the expression:</p>
+
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        AnimalType animalType = AnimalType.DOG
+
+                        switch animalType {
+                            case AnimalType.DOG: 
+                                print("Woof!")
+                            case AnimalType.WOLF:
+                                print("?")
+                            default:
+                                print("This animal doesn't seem to have a sound!")
+                        }
+
+                        // Output: "Woof!"
+                    }
+                </code>
+            </pre>
+
+            <div class="alert alert-primary d-flex align-items-center" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                </svg>
+                <div>
+                    Users familiar with other languages may notice that there are no breaks in this example. This is because, by default, switch cases will execute code until the parser finds a new case or the default case.
+                    If you want to use a break in order to, for example, use fallthrough cases, add the break keyword before the switch keyword: 
+                </div>
+            </div>
+
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        AnimalType animalType = AnimalType.DOG
+
+                        break switch animalType {
+                            case AnimalType.DOG: 
+                                print("Woof!")
+                            case AnimalType.WOLF:
+                                print("?")
+                                break
+                            default:
+                                print("This animal doesn't seem to have a sound!")
+                        }
+                    
+                        // Output:
+                        // "Woof!"
+                        // "?"
+                    }
+                </code>
+            </pre>
+
+            <p>You can also use <code class="inline">or</code> cases to group together similar behaviour:</p>
+
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        AnimalType animalType = AnimalType.DOG
+
+                        switch animalType {
+                            case AnimalType.DOG or Animal.CAT: 
+                                print("I'm a pet!")
+                            case AnimalType.WOLF:
+                                print("I'm probably not!")
+                        }
+                    
+                        // Output: "I'm a pet!"
+                    }
+                </code>
+            </pre>
+
+            <a href="#is-switch"><h2 id="is-switch">Is Switch</h2></a>
+
+            <p>
+                You can combine the <code class="inline">is</code> keyword with a <code class="inline">switch</code> construction to evaluate a certain value. Note that the identity operator <code class="inline">#</code>
+                refers to the <code class="inline">default</code> case.
+            </p>
+
+            <pre>
+                <code class="highlight">
+                    main class GNOTest {
+                        int res is switch expr {
+                            1 => 256,
+                            2 => 28,
+                            3 => 27,
+                            # => -1
+                        }
+                    }
+                </code>
+            </pre>
         </main>
         <aside>
             <h1>On This Page</h1>
             <ol>
-                <li><a href="#int">int</a></li>
-                <li><a href="#long">long</a></li>
-                <li><a href="#single">single</a></li>
-                <li><a href="#double">double</a></li>
-                <li><a href="#char">char</a></li>
-                <li><a href="#string">string</a></li>
-                <li><a href="#boolean">boolean</a></li>
+                <li><a href="#if">If</a></li>
+                <li><a href="#else-if">Else If</a></li>
+                <li><a href="#else">Else</a></li>
+                <li><a href="#switch">Switch</a></li>
+                <li><a href="#is-switch">Is Switch</a></li>
             </ol>
         </aside>
     </section>
