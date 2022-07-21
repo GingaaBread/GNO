@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://bevry-archive.github.io/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
+    <script type="text/javascript">$.SyntaxHighlighter.init();</script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../style.css">
+    <title>🖥️ GNO: Documentation</title>
+</head>
+<body>
+    <header class="d-flex align-items-center">
+        <svg></svg>
+        <div id="socials">Header</div>
+    </header>
+    <section class="d-flex justify-content-center">
+        <nav>
+            <ol>
+                <li><a href="../index.html"><h5>Start Here</h5></a></li>
+                <li>
+                    <a href="#"><h5>Essentials</h5></a>
+                    <ol>
+                        <li><a href="../essentials/Datatypes.html"">Datatypes</a></li>
+                        <li><a href="../essentials/Operators.html">Operators</a></li>
+                        <li><a href="../essentials/Conditions.html">Conditions</a></li>
+                        <li><a href="#">Loops</a></li>
+                        <li><a href="#">Arrays</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#"><h5>Object Orientation</h5></a>
+                    <ol>
+                        <li><a href="./classesobjects.html">Classes & Objects</a></li>
+                        <li class="current"><a href="#">Properties</a></li>
+                        <li><a href="#">Constructors</a></li>
+                        <li><a href="#">Methods</a></li>
+                        <li><a href="#">Protection Levels</a></li>
+                        <li><a href="#">Inheritance</a></li>
+                        <li><a href="#">Interfaces</a></li>
+                        <li><a href="#">Abstract Classes</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </nav>
+        <main>
+            <h1>Properties</h1>
+
+            <a href="#properties"><h2 id="properties">Properties</h2></a>
+            <p>Properties are attributes located in classes. Just like in most languages, you can add them directly to classes:</p>
+            <pre>
+                <code class="highlight">
+                    class Animal {
+                        private double weight
+                        protected Colour color
+                        sealed int age
+                        bool isMammal
+
+                        // ...
+                    }
+                </code>
+            </pre>
+
+            <p>Note how you can use any <a href="./protectionlevels.html">protection level</a> (private, protected, sealed, public)</p>
+
+            <p>The <code class="inline">:properties</code> group is used to group together attributes of a class and provide information about their use-case.</p>
+            <pre>
+                <code class="highlight">
+                    class Animal {
+                        :properties {
+                            double weight
+                            protected Colour color
+                            sealed int age
+                            public bool isMammal
+                        }
+
+                        // ...
+                    }
+                </code>
+            </pre>
+
+            <p>
+                Note how the protection levels of weight and isMammal are now different. This is because the default protection level in the <code class="inline">:properties</code> group 
+                is <code class="inline">private</code> and not <code class="inline">public</code>
+            </p>
+
+            <a href="#gettersetter"><h2 id="gettersetter">Properties: Getters & Setters</h2></a>
+
+            <p>You do not have to write getter and setter methods in GNO. Each non-public property in the <code class="inline">:properties</code> group automatically has both a public getter and a public setter method:</p>
+            <pre>
+                <code class="highlight">
+                    class Animal {
+                        :properties {
+                            double weight
+                            protected Colour color
+                            sealed int age
+                            public bool isMammal
+                        }
+
+                        // ...
+                    }
+
+                    main class GNOTest {
+                        dog = new Animal()
+                        dog.weight = 25d
+                        print(dog.weight) // Output: 25d
+                    }
+                </code>
+            </pre>
+
+            <p>You can also confine a property to only have a public getter or only a public setter method:</p>
+            <pre>
+                <code class="highlight">
+                    class Animal {
+                        :properties {
+                            double weight:get // Only has a getter, but no setter
+                            protected Colour color:set // Only has a setter, but no getter
+                            sealed int age // Has both a setter and a getter
+                            public bool isMammal // Is already public
+                        }
+
+                        // ...
+                    }
+
+                    main class GNOTest {
+                        dog = new Animal()
+                        dog.weight = 25d // Error: weight is private and does not have a setter
+                    }
+                </code>
+            </pre>
+            
+            <p>You can also have properties without getters and setters:</p>
+            <pre>
+                <code class="highlight">
+                    class Animal {
+                        :properties {
+                            double weight: // Has no getter & setter
+                            protected Colour color: // Has no getter & setter
+                            sealed int age: // Has no getter & setter
+                            public bool isMammal // Is already public
+                        }
+
+                        // ...
+                    }
+
+                    main class GNOTest {
+                        dog = new Animal()
+                        dog.weight = 25d // Error: weight is private and does not have a setter
+                    }
+                </code>
+            </pre>
+
+            <a href="#constructor"><h2 id="constructor">Constructor Properties</h2></a>
+            <p>You can use the <code class="inline">:properties</code> group as a reference for constructors. The constructor then requires values for the properties in the exact same order:</p>
+            <pre>
+                <code class="highlight">
+                    class Animal {
+                        :properties {
+                            double weight
+                            Colour color
+                            sealed int age
+                            bool isMammal
+                        }
+
+                        constructor(:properties)
+
+                        // ...
+                    }
+
+                    main class GNOTest {
+                        // The constructor requires values for the properties in the exact same order
+                        dog = new Animal(25d, Colour.BROWN, 7, true)
+                    }
+                </code>
+            </pre>
+
+            <p>You can also only use some of the properties as a reference for constructors. Just like with normal constructors, however, you cannot have two constructors with the same types:</p>
+            <pre>
+                <code class="highlight">
+                    class Animal {
+                        :properties {
+                            double weight
+                            Colour color
+                            sealed int age
+                            bool isMammal
+                        }
+
+                        // Offers the following three constructors:
+                        constructor(:properties[weight])
+                        constructor(:properties[weight, color])
+                        constructor(:properties[weight, age])
+
+                        // ...
+                    }
+
+                    main class GNOTest {
+                        dog = new Animal(25d)
+                    }
+                </code>
+            </pre>
+
+            <p>
+                If you only want to use one constructor with all properties, instead of using <code class="inline">constructor(:properties)</code>, you can add a postfix semicolon <code class="inline">;</code>
+                after the <code class="inline">:properties</code> group:
+            </p>
+            <pre>
+                <code class="highlight">
+                    class Animal {
+                        :properties: {
+                            double weight
+                            Colour color
+                            sealed int age
+                            bool isMammal
+                        }
+
+                        // ...
+                    }
+
+                    main class GNOTest {
+                        // The constructor requires values for the properties in the exact same order
+                        dog = new Animal(25d, Colour.BROWN, 7, true)
+                    }
+                </code>
+            </pre>
+        </main>
+        <aside>
+            <h1>On This Page</h1>
+            <ol>
+                <li><a href="#properties">Properties</a></li>
+                <li><a href="#gettersetter">Getter & Setters</a></li>
+                <li><a href="#constructor">Constructors</a></li>
+            </ol>
+        </aside>
+    </section>
+</body> 
+</html>

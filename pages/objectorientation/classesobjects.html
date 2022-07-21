@@ -24,9 +24,9 @@
                 <li>
                     <a href="#"><h5>Essentials</h5></a>
                     <ol>
-                        <li><a href="./essentials/Datatypes.html">Datatypes</a></li>
-                        <li><a href="./pages/essentials/Operators.html">Operators</a></li>
-                        <li><a href="#">Conditions</a></li>
+                        <li><a href="../essentials/Datatypes.html"">Datatypes</a></li>
+                        <li><a href="../essentials/Operators.html">Operators</a></li>
+                        <li><a href="../essentials/Conditions.html">Conditions</a></li>
                         <li><a href="#">Loops</a></li>
                         <li><a href="#">Arrays</a></li>
                     </ol>
@@ -35,7 +35,7 @@
                     <a href="#"><h5>Object Orientation</h5></a>
                     <ol>
                         <li class="current"><a href="#">Classes & Objects</a></li>
-                        <li><a href="#">Properties</a></li>
+                        <li><a href="./properties.html">Properties</a></li>
                         <li><a href="#">Constructors</a></li>
                         <li><a href="#">Methods</a></li>
                         <li><a href="#">Protection Levels</a></li>
@@ -57,7 +57,7 @@
                     }
                 </code>
             </pre>
-            <p>Classes can contain <a href="#">properties</a>, <a href="#">events</a>, and <a href="#">methods</a>.</p>
+            <p>Classes can contain <a href="./properties.html">properties</a>, <a href="">constructors</a>, <a href="#">events</a>, and <a href="#">methods</a>.</p>
             <pre>
                 <code class="highlight">
                     class Fraction {
@@ -76,7 +76,7 @@
                             return numerator / denominator
                         }
 
-                        overriden String ToString() {
+                        overridden String ToString() {
                             return `${numerator} / ${denominator}` 
                         }
                     }
@@ -95,7 +95,7 @@
 
                         :methods {
                             double ToDouble() => numerator / denominator
-                            overriden String ToString() => `${numerator} / ${denominator}` 
+                            overridden String ToString() => `${numerator} / ${denominator}` 
                         }
                     }
                 </code>
@@ -127,7 +127,7 @@
 
                         :methods {
                             double ToDouble() => numerator / denominator
-                            overriden String ToString() => `${numerator} / ${denominator}` 
+                            overridden String ToString() => `${numerator} / ${denominator}` 
                         }
                     }
                 </code>
@@ -136,8 +136,7 @@
                 <a href="#main"><h2 id="main">Main Classes</h2></a>
                 <p>
                     Your project can contain exactly one class preceded by the <code class="inline">main</code> 
-                    keyword. Main classes act like being in a void Main() {} method and hence may online contain
-                    code that would be allowed in the main method.
+                    keyword. Main classes act like main methods and hence may online contain code that would be allowed in the main method.
                 </p>
                 <pre>
                     <code class="highlight">
@@ -148,12 +147,14 @@
                         // =
     
                         class GNOTest {
-                            void Main() {
+                            main {
                                 print("Hello World") // "Hello World"
                             }
                         }
                     </code>
             </pre>
+
+            <p>For more information about the individual topics like constructors, methods, etc. take a look at the respective chapter.</p>
         </main>
         <aside>
             <h1>On This Page</h1>
