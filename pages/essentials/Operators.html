@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://bevry-archive.github.io/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
+    <script type="text/javascript" src="../../sh/scripts/jquery.syntaxhighlighter.js"></script>
     <script type="text/javascript">$.SyntaxHighlighter.init();</script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
@@ -65,7 +65,7 @@
 
             <a href="#m-plus"><h3 id="m-plus">Sum Operator +</h3></a>
             <p>The <code class="inline">+</code> operator is used to add two numbers and returns the sum.</p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     print(2+2) // 4
                     print(2.5d+2) // 4.5d
@@ -75,7 +75,7 @@
 
             <a href="#m-minus"><h3 id="m-minus">Difference Operator -</h3></a>
             <p>The <code class="inline">-</code> operator is used to subtract two numbers and returns the difference.</p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     print(3-2) // 1
                     print(2.5d-2.5d) // 0d
@@ -85,7 +85,7 @@
 
             <a href="#m-times"><h3 id="m-times">Product Operator *</h3></a>
             <p>The <code class="inline">*</code> operator is used to multiply two numbers and returns the product.</p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     print(3*2) // 6
                     print(2.5d*2) // 5d
@@ -95,7 +95,7 @@
 
             <a href="#m-division"><h3 id="m-division">Division Operator /</h3></a>
             <p>The <code class="inline">/</code> operator is used to divide two numbers and returns the division.</p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     print(5/2) // 2
                     print(5d/2d) // 2.5d
@@ -105,7 +105,7 @@
 
             <a href="#m-pow"><h3 id="m-pow">Power Operator **</h3></a>
             <p>The <code class="inline">**</code> operator is used to compute the power of an <em>integer.</em></p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     print(5**2) // 25
                     print(10**0) // 1
@@ -117,7 +117,7 @@
             <p>
                 The <code class="inline">%</code> operator is used to compute the remainder of an <em>integer</em> after 
                 dividing the left operand by the right operand.</p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     print(5 % 2) // 1
                     print(10 % 2) // 0
@@ -127,7 +127,7 @@
 
             <a href="#m-unary-sign"><h3 id="m-unary-sign">Unary + and -</h3></a>
             <p>The unary + returns the vaule of its operand. The unary - returns its numeric negation</p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     a = 5
                     print(+a) // 5
@@ -146,7 +146,7 @@
                 <code class="inline">a = a [operator] b</code>
             </p>
             <pre>
-                <code class="highlight">
+                <code class="highlight language-gno">
                     main class Example {
                         a = 1
                         a += 2 // a = 3; equals a = a + 7
@@ -166,7 +166,7 @@
                 The result of the prefix operation is the value <em>before</em> the operation, 
                 the result of the postfix operation is the value <em>after</em> the operation.
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     i = 5
                     
@@ -197,7 +197,7 @@
                 in the data structure. This uses the <code class="inline">length/size</code>
                 property. 
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     int[] a = [1,2,3,4,5]
                     print(|a|) // 5

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://bevry-archive.github.io/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
+    <script type="text/javascript" src="../../sh/scripts/jquery.syntaxhighlighter.js"></script>
     <script type="text/javascript">$.SyntaxHighlighter.init();</script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
@@ -69,7 +69,7 @@
                 <code class="inline">true</code> if the left operand is lesser than the right operand.
                 Else, it returns <code class="inline">false</code>
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     print(5 &lt; 3) // false
                     print(3 &lt; 5) // true
@@ -83,7 +83,7 @@
                 <code class="inline">true</code> if the left operand is greater than the right operand.
                 Else, it returns <code class="inline">false</code>
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     print(5 &gt; 3) // true
                     print(3 &gt; 5) // false
@@ -97,7 +97,7 @@
                 <code class="inline">true</code> if the left int operand divides the right int operand.
                 Else, it returns <code class="inline">false</code>
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     print(3|5) // false
                     print(3|6) // true
@@ -113,7 +113,7 @@
                 <code class="inline">true</code> if the left operand is lesser than or equal to the right operand.
                 Else, it returns <code class="inline">false</code>
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     print(5 &lt;= 3) // false
                     print(3 &lt;= 5) // true
@@ -127,7 +127,7 @@
                 <code class="inline">true</code> if the left operand is greater than or equal to the right operand.
                 Else, it returns <code class="inline">false</code>
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     print(5 &gt;= 3) // true
                     print(3 &gt;= 5) // false
@@ -141,7 +141,7 @@
                 <code class="inline">true</code> if the left operand is equal to the right operand.
                 Else, it returns <code class="inline">false</code>
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     print(5 == 3) // false
                     print(5 is 3) // false
@@ -167,7 +167,7 @@
                 It is also used to check if a variable is of a certain type. 
                 It returns <code class="inline">true</code> if the variable is of the specified type. 
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     print(5 is int) // true
                     print(5d is int) // false
@@ -188,7 +188,7 @@
                 casting the type of the right operand to the type of the left operand.
                 Else, it returns <code class="inline">false</code>
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     print(5 ~= "3") // false
                     print(5 equals "3") // false

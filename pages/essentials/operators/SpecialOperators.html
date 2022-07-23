@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://bevry-archive.github.io/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
+    <script type="text/javascript" src="../../sh/scripts/jquery.syntaxhighlighter.js"></script>
     <script type="text/javascript">$.SyntaxHighlighter.init();</script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
@@ -65,7 +65,7 @@
 
             <a href="#s-access"><h3 id="s-access">Member Access Operator .</h3></a>
             <p>The <code class="inline">.</code> operator accesses a member.</p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     print(myObject.doSomething())
                 }
@@ -79,7 +79,7 @@
 
             <a href="#s-absolute"><h3 id="s-absolute">Absolute Operator |n|</h3></a>
             <p>The <code class="inline">|n|</code> operator returns n if n is positive and -n if n is negative.</p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     print(5) // 5
                     print(|5|) // 5
@@ -95,7 +95,7 @@
 
             <a href="#s-array-access"><h3 id="s-array-access">Array Access Operator []</h3></a>
             <p>The <code class="inline">[]</code> operator accesses the value at the specified array index.</p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     values = [1,2,3]
                     print(values[0]) // 1
@@ -127,7 +127,7 @@
                 </svg>
                 The operator can be prefixed by the ~ operator. Then, the index will refer to the element starting at the end instead of the beginning of the array.
             </div>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     values = [1,2,3]
                     print(values[~0]) // 3
@@ -140,7 +140,7 @@
             <p>
                 The <code class="inline">~</code> operator negates a boolean variable without returning it.
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     boolean errorOccured = false
                     ~errorOccured
@@ -154,7 +154,7 @@
             <p>
                 The <code class="inline">exists</code> shortcut operator/keyword checks if a variable contains a non-null value. It evaluates to <code class="inline">X != null</code>.
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     MyObject myObject
                     print(myObject exists) // false
@@ -180,7 +180,7 @@
                 check if a structure contains an element. It evaluates to <code class="inline">true</code> if the element
                 exists and to <code class="inline">false</code> if not.
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     print(3 is in [1,2,3]) // true
                     print(3 is in [33,333,3333]) // false
@@ -197,7 +197,7 @@
                 The <code class="inline">A ? B : C</code> operator checks a Boolean expression <em>A</em> and then returns the result
                 of one of two expressions depending on whether <em>A</em> was <code class="inline">true</code> or <code class="inline">false</code>. 
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     i = 404
                     string errorType = i == 404 ? "Not Found" : "Error"
@@ -211,7 +211,7 @@
                 of the one expression that evaluated to <code class="inline">true</code>. If none evaluated to true, it returns the result of the expression in <code class="inline">B</code>. 
                 This resembles an inline if / else if / else. The evaluate() function can be used for this purpose as well.  
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     int errorType = 404
                     string message
@@ -243,7 +243,7 @@
             <p>
                 The <code class="inline">=></code> operator is used in lamda expressions and expression bodies.
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 button.SetOnClick(() => print("Clicked!"))
                 ...
                 string GenerateString() => "Hello World"
@@ -273,7 +273,7 @@
                 use it to separate elements in the <code class="inline">evaluate()</code> function, etc.
             </p>
             <p>The functionality of the variety operator is always explained in the respective section.</p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 int errorType = 404
                 string message = errorType.compare([401:"Unauthorized", 402:"Payment Required", 403:"Not Found", "Error"])
             </code> 

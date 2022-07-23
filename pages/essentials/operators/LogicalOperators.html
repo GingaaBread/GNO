@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://bevry-archive.github.io/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
+    <script type="text/javascript" src="../../sh/scripts/jquery.syntaxhighlighter.js"></script>
     <script type="text/javascript">$.SyntaxHighlighter.init();</script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
@@ -71,7 +71,7 @@
                 only returned, a boolean variable will <strong>not</strong> be assigned to its negated value (this can 
                 be done using the <code class="inline">~</code> operator discussed in Special Operators). 
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     print(!true) // false
                     print(not true) // false
@@ -90,7 +90,7 @@
                 if <strong>both</strong> operands are <code class="inline">true</code>. If one or both are <code class="inline">false</code>,
                 it returns <code class="inline">false</code>.
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     boolean learningGNO = true
                     boolean havingFun = true
@@ -108,7 +108,7 @@
                 if <strong>at least one</strong> operand is <code class="inline">true</code>. If both are <code class="inline">false</code>,
                 it returns <code class="inline">false</code>.
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     boolean learningGNO = true
                     boolean havingFun = true
@@ -126,7 +126,7 @@
                 if <strong>exactly one</strong> operand is <code class="inline">true</code>. If both are <code class="inline">false</code>,
                 or <code class="inline">true</code>, it returns <code class="inline">false</code>.
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 main class Example {
                     boolean learningGNO = true
                     boolean havingFun = true
@@ -144,7 +144,7 @@
                 <code class="inline">&&</code>/<code class="inline">and</code>, but still evaluates the right side even
                 if the left side has already been evaluated to <code class="inline">false</code>.
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 Main() {
                     print(false and Test()) // false
                     print(false && Test()) // false
@@ -163,7 +163,7 @@
                 <code class="inline">||</code>/<code class="inline">or</code>, but still evaluates the right side even
                 if the left side has already been evaluated to <code class="inline">true</code>.
             </p>
-            <code class="highlight">
+            <code class="highlight language-gno">
                 Main() {
                     print(true or Test()) // true
                     print(false || Test()) // true
