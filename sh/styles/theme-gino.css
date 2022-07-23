@@ -1,0 +1,60 @@
+/* Base */
+.prettyprint.theme-balupton {
+	font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier,
+		monospace;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 15px;
+}
+
+/* Comments */
+.prettyprint.theme-balupton .com {
+	color: #27ae60;
+}
+
+/* Keywords */
+.prettyprint.theme-balupton .lit, 
+.prettyprint.theme-balupton.lang-html .lit,
+.prettyprint.theme-balupton.lang-html .kwd {
+	color: #1abc9c;
+}
+
+/* GNO Group */
+.prettyprint.theme-balupton.lang-gno .grp {
+	color: #e67e22;
+}
+
+/* GNO Base Method */
+.prettyprint.theme-balupton.lang-gno .gbm {
+	color: #9b59b6;
+}
+
+.prettyprint.theme-balupton.lang-html .atv + .pln,
+.prettyprint.theme-balupton.lang-html .pun + .pln {
+	/* CSS Property Name */
+	color: #3498db;
+}
+.prettyprint.theme-balupton .atv,
+.prettyprint.theme-balupton .str {
+	color: #3498db;
+}
+.prettyprint.theme-balupton .atn {
+	color: #bdc3c7;
+}
+
+/* Plain */
+.prettyprint.theme-balupton .pln {
+	color: #2c3e50;
+}
+.prettyprint.theme-balupton .pun {
+	color: #95a5a6;
+}
+.prettyprint.theme-balupton .typ {
+	color: #8e44ad;
+}
+.prettyprint.theme-balupton .tag,
+.prettyprint.theme-balupton .kwd {
+	color: #1abc9c;
+	font-weight: bold;
+}
