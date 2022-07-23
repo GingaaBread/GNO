@@ -1,5 +1,5 @@
 /* Base */
-.prettyprint.theme-balupton {
+.prettyprint.theme-gino {
 	font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier,
 		monospace;
 	font-size: 14px;
@@ -9,52 +9,52 @@
 }
 
 /* Comments */
-.prettyprint.theme-balupton .com {
+.prettyprint.theme-gino .com {
 	color: #27ae60;
 }
 
 /* Keywords */
-.prettyprint.theme-balupton .lit, 
-.prettyprint.theme-balupton.lang-html .lit,
-.prettyprint.theme-balupton.lang-html .kwd {
+.prettyprint.theme-gino .lit, 
+.prettyprint.theme-gino.lang-html .lit,
+.prettyprint.theme-gino.lang-html .kwd {
 	color: #1abc9c;
 }
 
 /* GNO Group */
-.prettyprint.theme-balupton.lang-gno .grp {
+.prettyprint.theme-gino.lang-gno .grp {
 	color: #e67e22;
 }
 
 /* GNO Base Method */
-.prettyprint.theme-balupton.lang-gno .gbm {
+.prettyprint.theme-gino.lang-gno .gbm {
 	color: #9b59b6;
 }
 
-.prettyprint.theme-balupton.lang-html .atv + .pln,
-.prettyprint.theme-balupton.lang-html .pun + .pln {
+.prettyprint.theme-gino.lang-html .atv + .pln,
+.prettyprint.theme-gino.lang-html .pun + .pln {
 	/* CSS Property Name */
 	color: #3498db;
 }
-.prettyprint.theme-balupton .atv,
-.prettyprint.theme-balupton .str {
+.prettyprint.theme-gino .atv,
+.prettyprint.theme-gino .str {
 	color: #3498db;
 }
-.prettyprint.theme-balupton .atn {
+.prettyprint.theme-gino .atn {
 	color: #bdc3c7;
 }
 
 /* Plain */
-.prettyprint.theme-balupton .pln {
+.prettyprint.theme-gino .pln {
 	color: #2c3e50;
 }
-.prettyprint.theme-balupton .pun {
+.prettyprint.theme-gino .pun {
 	color: #95a5a6;
 }
-.prettyprint.theme-balupton .typ {
+.prettyprint.theme-gino .typ {
 	color: #8e44ad;
 }
-.prettyprint.theme-balupton .tag,
-.prettyprint.theme-balupton .kwd {
+.prettyprint.theme-gino .tag,
+.prettyprint.theme-gino .kwd {
 	color: #1abc9c;
 	font-weight: bold;
 }
